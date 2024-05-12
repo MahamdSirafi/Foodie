@@ -1,6 +1,6 @@
 # Dependencies
 node_modules
-
+public/img
 # yarn error logs
 yarn-error.log
 
