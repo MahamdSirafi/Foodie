@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Foodie</title>
+    <link href="fontawesome-free-6.0.0-web/css/all.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+    <!-- header section starts      -->
+
+    <header>
+
+        <a href="#" class="logo"><i class="fas fa-utensils"></i>Foodie</a>
+
+        <nav class="navbar">
+            <a href="index.html">home</a>
+            <a href="about.html">about</a>
+            <a href="menu.html">menu</a>
+            <a href="order.html">order</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="cart.html" class="fas fa-shopping-cart"></a>
+            <a href="user.html" class="fas fa-user"></a>
+        </div>
+    </header>
+
+    <!-- header section ends-->
+
+    <!-- search form  -->
+
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+    <div class="heading-checkout">
+        <h3>checkout</h3>
+        <p><a href="index.html">home </a> <span> / checkout</span></p>
+    </div>
+
+    <section class="checkout">
+
+        <h1 class="title-checkout">order summary</h1>
+
+        <form action="" method="post">
+            <div class="cart-items">
+                <h3>cart items</h3>
+                <p><span class="name">delicious pizza 01</span><span class="price">$3</span></p>
+                <p><span class="name">main dish 02</span><span class="price">$3</span></p>
+                <p><span class="name">delicious dessert 01</span><span class="price">$3</span></p>
+                <p class="grand-total"><span class="name">grand total :</span> <span class="price">$9</span></p>
+                <a href="cart.html" class="btn-checkout">view cart</a>
+            </div>
+            <div class="user-info">
+                <h3>your info</h3>
+                <p><i class="fas fa-user"></i> <span>shaikh anas</span></p>
+                <p><i class="fas fa-phone"></i> <span>1234567890</span></p>
+                <p><i class="fas fa-envelope"></i> <span>shaikhanas@gmail.com</span></p>
+                <a href="update_profile.html" class="btn">update info</a>
+                <h3>delivery address</h3>
+                <p class="address"><i class="fas fa-map-marker-alt"></i> <span>flat no. 1, building no. 1, jogeshwari
+                        west, mumbai, india - 400104</span></p>
+                <a href="update_address.html" class="btn">update address</a>
+                <select name="method" class="box" required>
+                    <option value="" disabled selected>select payment method</option>
+                    <option value="cash on delivery">cash on delivery</option>
+                    <option value="credit card">credit card</option>
+                    <option value="paytm">paytm</option>
+                    <option value="paypal">paypal</option>
+                </select>
+            </div>
+            <input type="submit" value="place order" name="order" class="btn order-btn">
+        </form>
+
+    </section>
+
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="index.html">home</a>
+                <a href="about.html">about</a>
+                <a href="menu.html">menu</a>
+                <a href="order.html">order</a>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#">+123-456-7890</a>
+                <a href="#">+111-222-3333</a>
+                <a href="#">xyz@gmail.com</a>
+                <a href="#">xyz@gmail.com</a>
+                <a href="#">balisana, india - 384110</a>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#">facebook</a>
+                <a href="#">twitter</a>
+                <a href="#">instagram</a>
+                <a href="#">linkedin</a>
+            </div>
+
+        </div>
+
+        <div class="credit"> copyright @ 2024 by <span>The BitsTeam.</span>All rights reserved. </div>
+
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- loader part  -->
+    <div class="loader-container">
+        <img src="images/loader.gif" alt="">
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

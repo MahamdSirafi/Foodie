@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Foodie</title>
+    <link href="fontawesome-free-6.0.0-web/css/all.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+    <!-- header section starts      -->
+
+    <header>
+
+        <a href="#" class="logo"><i class="fas fa-utensils"></i>Foodie</a>
+
+        <nav class="navbar">
+            <a href="index.html">home</a>
+            <a href="about.html">about</a>
+            <a href="menu.html">menu</a>
+            <a href="order.html">order</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="cart.html" class="fas fa-shopping-cart"></a>
+            <a href="user.html" class="fas fa-user"></a>
+        </div>
+
+    </header>
+
+    <!-- header section ends-->
+
+
+    <!-- search form  -->
+
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+    <!-- update-address section starts-->
+
+    <section class="form-container">
+
+        <form action="" method="post">
+            <h3>your address</h3>
+            <input type="text" maxlength="50" placeholder="flat no. and building name" required class="box" name="flat">
+            <input type="text" maxlength="50" placeholder="area name" required class="box" name="street">
+            <input type="text" maxlength="50" placeholder="city name" required class="box" name="city">
+            <input type="text" maxlength="50" placeholder="state name" required class="box" name="state">
+            <input type="text" maxlength="50" placeholder="country name" required class="box" name="country">
+            <input type="number" min="0" max="999999" placeholder="pin code" required class="box" name="pin_code"
+                onkeypress="if(this.value.length == 6) return false;">
+            <input type="submit" value="save address" name="submit" class="btn">
+        </form>
+
+    </section>
+    <!-- update-address section ends-->
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="index.html">home</a>
+                <a href="about.html">about</a>
+                <a href="menu.html">menu</a>
+                <a href="order.html">order</a>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#">+123-456-7890</a>
+                <a href="#">+111-222-3333</a>
+                <a href="#">xyz@gmail.com</a>
+                <a href="#">xyz@gmail.com</a>
+                <a href="#">balisana, india - 384110</a>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#">facebook</a>
+                <a href="#">twitter</a>
+                <a href="#">instagram</a>
+                <a href="#">linkedin</a>
+            </div>
+
+        </div>
+
+        <div class="credit"> copyright @ 2024 by <span>The BitsTeam.</span>All rights reserved. </div>
+
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- loader part  -->
+    <div class="loader-container">
+        <img src="images/loader.gif" alt="">
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
