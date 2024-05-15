@@ -69,19 +69,21 @@ app.use(xss());
 app.use(
   hpp({
     whitelist: ['duration', 'difficulty', 'price'],
-  }),
+  })
 );
 //ضغط البيانات قبل ارسالها من اجل تسريع النقل
 app.use(compression());
 const userRouter = require('./routes/userRoutes');
-const productRouter= require('./routes/productRouter')
-const messageRouter= require('./routes/messageRouter')
+const productRouter = require('./routes/productRouter');
+const messageRouter = require('./routes/messageRouter');
+const orderRoutes = require('./routes/orderRoutes');
 
 // 3) ROUTES
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 app.use('/', userRouter);
 app.use('/api/v1.0.0/products', productRouter);
 app.use('/api/v1.0.0/messages', messageRouter);
+app.use('/api/v1.0.0/orders', orderRoutes);
 app.use('/api/v1.0.0/users', userRouter);
 //في حال طلب مورد غير موجود
 app.all('*', (req, res, next) => {
@@ -101,7 +103,7 @@ mongoose
     app.listen(process.env.PORT, () => {
       console.log(
         `Example app listening at http://localhost:${process.env.PORT}
-Example app listening at http://localhost:${process.env.PORT}/docs`,
+Example app listening at http://localhost:${process.env.PORT}/docs`
       );
     });
   })
