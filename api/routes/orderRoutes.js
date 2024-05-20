@@ -14,6 +14,13 @@ router
     orderController.getAllOrder
   );
 router
+  .route('/mien/delivery')
+  .get(
+    authMiddlewers.restrictTo('delivery'),
+    dynamicMiddleware.addQuery('delivery', 'userId'),
+    orderController.getAllOrder
+  );
+router
   .route('/')
   .get(authMiddlewers.restrictTo('admin'), orderController.getAllOrder)
   .post(
@@ -22,13 +29,23 @@ router
     orderController.createOrder
   );
 router
+  .route('/:id/done')
+  .patch(
+    authMiddlewers.restrictTo('user'),
+    dynamicMiddleware.addVarBody('status', 'Completed'),
+    orderController.updateOrder
+  );
+router
+  .route('/:id/paid')
+  .patch(
+    authMiddlewers.restrictTo('delivery'),
+    dynamicMiddleware.addVarBody('paid', true),
+    orderController.updateOrder
+  );
+router
   .route('/:id')
   .get(authMiddlewers.restrictTo('user', 'admin'), orderController.getOrder)
-  .patch(
-    authMiddlewers.restrictTo('admin'),
-   
-    orderController.updateOrder
-  )
+  .patch(authMiddlewers.restrictTo('admin'), orderController.updateOrder)
   .delete(authMiddlewers.restrictTo('admin'), orderController.deleteOrder);
 
 module.exports = router;

@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const Messagge = require('./messageModel');
+const Product = require('./productModel');
 const orderSchema = new mongoose.Schema(
   {
     cart: [
@@ -69,5 +71,17 @@ const orderSchema = new mongoose.Schema(
   },
   { timestamps: true, versionKey: false }
 );
+orderSchema.post('save', async function (doc) {
+  let thisproduct;
+  for (let i = 0; i < doc.cart.length; i++) {
+    thisproduct = await Product.findById(doc.cart[i].product);
+    thisproduct.quantity_available -= doc.cart[i].quantity;
+    if (thisproduct.quantity_available / thisproduct.total_quantity < 0.3) {
+      let newmessage = await Messagge.create({
+        message: `Available Stock Is Running Out for product ${thisproduct.name}`,
+      });
+    }
+  }
+});
 const Order = mongoose.model('Order', orderSchema);
 module.exports = Order;
