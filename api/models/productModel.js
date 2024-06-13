@@ -6,6 +6,7 @@ const productSchema = new mongoose.Schema({
   },
   category: {
     required: [true, 'must enter category'],
+    enum:["deserts","drinks","dinner","lunch","breakfast"],
     type: String,
   },
   image: {

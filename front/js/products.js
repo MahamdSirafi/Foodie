@@ -1,17 +1,28 @@
-// Helpful Variables for Cart & Main Products
-let iconCart = document.querySelector(".icon-cart");
-let body = document.querySelector("body");
-let closeCart = document.querySelector(".close");
 let breakfast = document.getElementById("breakfast");
 let lunch = document.getElementById("lunch");
+let menu = document.getElementById("menu");
 let dinner = document.getElementById("dinner");
 let drinks = document.getElementById("drinks");
 let deserts = document.getElementById("deserts");
 let listProducts = [];
+let listcard = [];
+
+menu.addEventListener("click", (event) => {
+  event.preventDefault();
+  let positionClick = event.target;
+  if (positionClick.classList.contains("addcart")) {
+    let product_id = positionClick.dataset.id;
+    let price = +positionClick.dataset.price;
+    let img = positionClick.dataset.img;
+    let name = positionClick.dataset.name;
+    console.log(positionClick.dataset);
+    addToCart(product_id, price, img, name);
+  }
+});
+
 // Showing Products Function
 const addDataToHTML = () => {
   if (listProducts.length > 0) {
-    ``;
     listProducts.forEach((product) => {
       let newProduct = document.createElement("div");
       newProduct.classList.add("box");
@@ -29,7 +40,7 @@ const addDataToHTML = () => {
                                             </div>
                                             <h3>${product.name}</h3>
                                             <p>${product.description}.</p>
-                                            <a href="#" class="btn" id="${product._id}">add to cart</a>
+                                            <a class="btn addcart" data-id="${product._id}" data-price="${product.price}" data-img="${product.image}" data-name="${product.name}" >add to cart</a>
                                             <span class="price">$${product.price}</span>
                                         </div>`;
       switch (product.category) {
@@ -63,12 +74,42 @@ const initApp = () => {
     .then((response) => response.json())
     .then((data) => {
       listProducts = data.doc;
-      console.log(listProducts);
       addDataToHTML();
-      // get cart from memory
-      if (localStorage.getItem("productCart")) {
-        listcard = JSON.parse(localStorage.getItem("productCart"));
-      }
     });
 };
 initApp();
+
+//////////////////////////////////////////
+const addToCart = (id, price, img, name) => {
+  let positionThisProductInCart = listcard.findIndex(
+    (value) => value.product == id
+  );
+  if (listcard.length <= 0) {
+    listcard = [
+      {
+        name,
+        product: id,
+        quantity: 1,
+        price,
+        img,
+      },
+    ];
+  } else if (positionThisProductInCart < 0) {
+    listcard.push({
+      product: id,
+      quantity: 1,
+      name,
+      price,
+      img,
+    });
+  } else {
+    listcard[positionThisProductInCart].quantity++;
+    listcard[positionThisProductInCart].price += price;
+  }
+  addCartToMemory();
+};
+// To Store Cart Products In Memory
+
+const addCartToMemory = () => {
+  localStorage.setItem("cart", JSON.stringify(listcard));
+};
