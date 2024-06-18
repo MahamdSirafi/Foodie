@@ -11,6 +11,7 @@ toggle.addEventListener("click", () => {
 });
 
 const form = document.getElementById("login");
+console.log(form);
 const forgot = document.getElementById("forgot");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
