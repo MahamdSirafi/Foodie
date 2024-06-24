@@ -34,6 +34,10 @@ form.addEventListener("submit", (eve) => {
             .then((response) => response.json())
             .then((data) => {
                 if (data.status == "success") {
+                    localStorage.removeItem("cart")
+                    localStorage.removeItem("total")
+                    localStorage.removeItem("card")
+
                     if (document.getElementById("type").value == "bank")
                         window.location.href = "./bank.html";
 

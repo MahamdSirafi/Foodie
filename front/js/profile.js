@@ -193,4 +193,17 @@ logoutBtn.addEventListener( 'click',( e ) =>
     console.log(err);
   }
 });
+// profile.js
 
+// Load data from Local Storage
+const name = localStorage.getItem('name');
+const email = localStorage.getItem('email');
+const phone = localStorage.getItem('phone');
+const address = localStorage.getItem('address');
+
+
+// Update the HTML elements with the loaded data
+document.getElementById('name').value = name ;
+document.getElementById('email').value = email ;
+document.getElementById('phone').value = phone ;
+document.getElementById('address').value = address ;
