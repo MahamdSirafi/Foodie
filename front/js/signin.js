@@ -39,7 +39,7 @@ form.addEventListener("submit", (event) => {
           localStorage.setItem("token", data.token);
           localStorage.setItem("user", JSON.stringify(data.user));
           if (data.user.role === "admin") {
-            window.location.href = "./dashboard.html";
+            window.location.href = "./dashbord.html";
           } else if (data.user.role === "user") {
             window.location.href = "./index.html";
           }
