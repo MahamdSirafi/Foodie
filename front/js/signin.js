@@ -42,6 +42,8 @@ form.addEventListener("submit", (event) => {
             window.location.href = "./dashbord.html";
           } else if (data.user.role === "user") {
             window.location.href = "./index.html";
+          } else if (data.user.role === "delivery") {
+            window.location.href = "./ordersDliv.html";
           }
         } else {
           alert(data.message);

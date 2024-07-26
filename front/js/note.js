@@ -1,5 +1,8 @@
 const tbody = document.getElementById("tbody");
-fetch("http://localhost:7000/api/v1.0.0/products")
+fetch("http://localhost:7000/api/v1.0.0/messages", {
+  method: "GET",
+  headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+})
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
@@ -7,16 +10,10 @@ fetch("http://localhost:7000/api/v1.0.0/products")
     listProducts.forEach((element) => {
       let newproduct = document.createElement("tr");
 
-      newproduct.innerHTML = `<td>${element.name}</td>
-    <td>${element.category}</td>
-    <td><img src="${element.image}" crossorigin="anonymous" width="100px" height="100px ;" style=""></td>
-    <td>${element.price}</td>
-
-    <td>${element.quantity_available}</td>
-    <td>${element.total_quantity}</td>
+      newproduct.innerHTML = `<td>${element.message}</td>
+    <td>${element.createdAt}</td>
     <td>
      <button data-id="${element._id}" class="delete-product-btn">Delete</button>
-     <button data-id="${element._id}" style="background-color: greenyellow;" class="update-product-btn">update</button>
       </td>`;
       tbody.append(newproduct);
     });
@@ -26,7 +23,7 @@ tbody.addEventListener("click", (event) => {
     event.preventDefault();
 
     fetch(
-      `http://localhost:7000/api/v1.0.0/products/${event.target.dataset.id}`,
+      `http://localhost:7000/api/v1.0.0/messages/${event.target.dataset.id}`,
       {
         method: "DELETE",
         headers: {
@@ -38,7 +35,7 @@ tbody.addEventListener("click", (event) => {
       .then((data) => {
         if ((data.status = "success")) {
           alert("delete success");
-          window.location.href = "./dashbord.html";
+          window.location.href = "./note.html";
         } else {
           alert(data.messag);
         }

@@ -23,7 +23,7 @@ exports.getOrder = factory.getOne(
   },
   {
     path: 'cart.product',
-    select: 'name price ',
+    select: 'name price image ',
   }
 );
 exports.updateOrder = factory.updateOne(Order);

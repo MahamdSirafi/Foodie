@@ -22,32 +22,19 @@
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
-
   <body>
     <!-- header section starts      -->
     <header>
-      <a href="#" class="logo"><i class="fas fa-utensils"></i>Foodie</a>
-
       <nav class="navbar">
-        <a href="./index.html">home</a>
-        <a href="./about.html">about</a>
-        <a href="./menu.html">menu</a>
-        <a href="./ordersUser.html">orders</a>
+        <a href="./dashbord.html">products</a>
+        <a href="./orders.html">orders</a>
+        <a href="./dashbordDli.html">deliveris</a>
+        <a href="./note.html">Notifications</a>
       </nav>
 
-      <div class="icons">
-        <a href="login.html" class="fas fa-sign-in" id="login"></a>
-        <!-- <i class="fas fa-search" id="search-icon"></i> -->
-        <a href="#" class="fas fa-heart"></a>
-        <a href="cart.html" class="fas fa-shopping-cart"></a>
-        <a href="user.html" class="fas fa-user"></a>
-      </div>
+      <!-- <h1>products</h1> -->
+      <a href="./add_product.html" class="button" id="Add">Add product</a>
     </header>
-
-    <!-- header section ends-->
-
-    <!-- search form  -->
-
     <form action="" id="search-form">
       <input
         type="search"
@@ -58,34 +45,17 @@
       <label for="search-box" class="fas fa-search"></label>
       <i class="fas fa-times" id="close"></i>
     </form>
-
-    <!-- profile section starts  -->
-
-    <div class="heading-profile">
-      <h3>my profile</h3>
-      <p><a href="index.html">home </a> <span> / profile</span></p>
+    <!-- cart section starts  -->
+    <div class="heading-cart">
+      <h3>shopping cart</h3>
     </div>
-
-    <section class="user-details">
-      <div class="user">
-        <img
-          style="border-radius: 50%; width: 150px; height: 150px"
-          id="image"
-          src="images/user-icon.png"
-          crossorigin="anonymous"
-          alt=""
-        />
-        <p id="name"><i class="fas fa-user"></i></p>
-        <p id="email"><i class="fas fa-envelope"></i></p>
-        <a href="update_profile.html" class="btn">update profile</a>
-        <p class="address"><i class="fas fa-map-marker-alt"></i></p>
-        <a href="update_password.html" class="btn">update password</a>
+    <section class="products">
+      <h1 class="title-cart">your cart</h1>
+      <div class="cart-total">
+        <p>grand total : <span id="total"></span></p>
       </div>
+      <div class="box-container" id="box"></div>
     </section>
-    <!-- profile section ends  -->
-
-    <!-- footer section starts  -->
-
     <section class="footer">
       <div class="box-container">
         <div class="box">
@@ -93,19 +63,21 @@
           <a href="index.html">home</a>
           <a href="about.html">about</a>
           <a href="menu.html">menu</a>
-          <a href="orders.html">orders</a>
+          <a href="order.html">order</a>
         </div>
 
         <div class="box">
           <h3>contact info</h3>
-          <a href="#">0945915868</a>
-          <a href="#">main@foodie.com</a>
+          <a href="#">0965482310</a>
+          <a href="#">0964852159</a>
+          <a href="#">ahmed@gmail.com</a>
+          <a href="#">ali@gmail.com</a>
+          <a href="#">aleppo, syria</a>
         </div>
-
       </div>
 
       <div class="credit">
-        copyright @ 2024 by <span>The foodie.</span>All rights reserved.
+        copyright @ 2024 by <span>The BitsTeam.</span>All rights reserved.
       </div>
     </section>
 
@@ -120,6 +92,6 @@
 
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
-    <script src="js/profile.js"></script>
+    <script src="js/details.js"></script>
   </body>
 </html>

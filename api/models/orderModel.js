@@ -81,6 +81,7 @@ orderSchema.post('save', async function (doc) {
         message: `Available Stock Is Running Out for product ${thisproduct.name}`,
       });
     }
+    await thisproduct.save();
   }
 });
 const Order = mongoose.model('Order', orderSchema);

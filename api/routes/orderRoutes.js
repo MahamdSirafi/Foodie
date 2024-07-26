@@ -5,6 +5,7 @@ const { checkOwner } = require('../middlewares/checkMiddleware');
 const authMiddlewers = require('../middlewares/authMiddlewers');
 const dynamicMiddleware = require('../middlewares/dynamicMiddleware');
 const orderController = require('../controllers/orderController');
+const { checkMony } = require('../middlewares/orderMiddlewers');
 router.use(authMiddlewers.protect);
 router
   .route('/mien')
@@ -18,6 +19,7 @@ router
   .get(
     authMiddlewers.restrictTo('delivery'),
     dynamicMiddleware.addQuery('delivery', 'userId'),
+    dynamicMiddleware.addQuery('status', 'Out For Delivery'),
     orderController.getAllOrder
   );
 router
@@ -33,6 +35,7 @@ router
   .patch(
     authMiddlewers.restrictTo('user'),
     dynamicMiddleware.addVarBody('status', 'Completed'),
+    checkMony,
     orderController.updateOrder
   );
 router

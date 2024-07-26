@@ -18,11 +18,11 @@ const userSchema = new mongoose.Schema(
     },
     photo: {
       type: String,
-      default: 'http://localhost:7000/img/user-icon.png',
+      default: 'images/user-icon.png',
     },
     role: {
       type: String,
-      enum: ['user', 'admin','delivery'],
+      enum: ['user', 'admin', 'delivery'],
       default: 'user',
     },
     password: {
